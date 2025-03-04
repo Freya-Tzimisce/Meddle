@@ -6,7 +6,7 @@ Meddle acts as a pass-through to allow mods which implement net.minecraft.launch
 
 Mods must include a Tweak-Class directive in the jar manifest to point to the appropriate class to load.
 
-Mod jars go into the minecraft_instance_folder/Meddle directory.
+Mod jars go into the .minecraft/meddle directory.
 
 If desired, mods may include the MeddleMod annotation on their tweak class to designate an ID, name, author, version, and mod dependencies.
 
