@@ -12,4 +12,4 @@ If desired, mods may include the MeddleMod annotation on their tweak class to de
 
 See the [DynamicMappings](https://github.com/Freya-Tzimisce/DynamicMappings) and [MeddleMods](https://github.com/FyberOptic/MeddleMods) projects for examples of Meddle's use.
 
-For higher-level development, there's also [MeddleAPI](https://github.com/Freya-Tzimisce/MeddleAPI）.
+For higher-level development, there's also [MeddleAPI](https://github.com/Freya-Tzimisce/MeddleAPI).
