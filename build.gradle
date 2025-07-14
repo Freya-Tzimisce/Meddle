@@ -1,39 +1,43 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 sourceSets {
-	main {
-		java {
-			srcDirs = ['src']
-		}
-	}
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
 }
 
 repositories {
     mavenCentral()
 
     maven {        
-        url 'https://libraries.minecraft.net/'
+        url = 'https://libraries.minecraft.net/'
     }
 }
 
 dependencies {
 	//compile fileTree(dir:'../libs/', excludes:['minecraft/**'])
-	compile 'net.minecraft:launchwrapper:1.11'
-	compile 'org.ow2.asm:asm-all:5.0.3'
-	compile 'net.sf.jopt-simple:jopt-simple:4.6'
+    implementation 'net.minecraft:launchwrapper:1.11'
+    implementation 'org.ow2.asm:asm-all:5.0.3'
+    implementation 'net.sf.jopt-simple:jopt-simple:4.6'
 }
 
-gradle.projectsEvaluated {
-    tasks.withType(JavaCompile) {
-        options.compilerArgs << "-Xlint:-options"
-    }
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs.add("-Xlint:-options")
 }
 
-sourceCompatibility = '1.7'
-targetCompatibility = '1.7'
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 jar {
-    baseName = 'meddle'
-    version = '1.3.1'
+    archiveBaseName = 'meddle'
+    archiveVersion = '1.3.1'
 }
-
